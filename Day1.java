@@ -10,11 +10,12 @@ public class Day1 {
         Age = sc.nextInt();
         System.out.println("Enter Roll No. : ");
         Roll = sc.nextInt();
-        System.out.println("Name is "+Name+" Age is "+Age+" and Roll No. is : "+Roll);
         sc.close();
     }
     public static void main(String[] args) {
         Day1 d1 = new Day1();
         Day1 d2 = new Day1();
+        System.out.println("Name is "+d1.Name+" Age is "+d1.Age+" and Roll No. is : "+d1.Roll);
+        System.out.println("Name is "+d2.Name+" Age is "+d2.Age+" and Roll No. is : "+d2.Roll);
     }
 }

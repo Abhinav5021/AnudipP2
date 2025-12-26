@@ -9,6 +9,5 @@ public class Demo{
         Demo d = new Demo("Abhinav", 37);
         System.out.println("My name is : "+ d.Name +" & My Roll Number is : " + d.Roll);
         // int g = null;
-        Integer g = null;
     }
 }
