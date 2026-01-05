@@ -27,12 +27,16 @@ public class Day3_2 {
         catch(Exception e){
             System.out.println(e);
         }
+        finally{
+            System.out.println("Finally Executed");
+            // this block will execute anyhow 
+        }
         System.out.println("Hello");
-        sc.close();
 
         // Runtime Exceptions and its classes are  Unchecked Exceptions 
         // Others are Checked Exceptions
         // FileReader r = new FileReader("abc.txt");
+        sc.close();
 
     }
 }
@@ -57,3 +61,8 @@ public class Day3_2 {
     // 3. Catch ( Exception e){
     //     e.printStackTrace(); { Name , Description, Location}
     // }
+
+
+    // INPUT MISMATCH EXCEPTION 
+    // NEGATIVE ARRAY SIZE EXCEPTION 
+    // FINALLY BLOCK 
