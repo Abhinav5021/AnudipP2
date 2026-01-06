@@ -25,7 +25,7 @@ public class ArrayList1 {
         for (Integer num : numbers) {
             System.out.println(num);
         }
-        
+
         System.out.println("Size of list: " + numbers.size());
     }
 
