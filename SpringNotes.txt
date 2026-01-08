@@ -1,0 +1,10 @@
+create table Emp(Name varchar(10),ID number);
+
+@Entity
+public class emp{
+    @ID
+    int id;
+    String Name;
+    //getter
+    //setter
+}

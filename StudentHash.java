@@ -1,10 +1,10 @@
 import java.util.HashSet;
 
-class Student{
+class Student1{
     private int ID;
     private String Name;
 
-    Student(int id,String name){
+    Student1(int id,String name){
         ID = id;
         Name = name;
     }
@@ -18,10 +18,10 @@ public class StudentHash {
 
     public static void main(String[] args) {
 
-        Student s1 = new Student(1," Abhinav");
-        Student s2 = new Student(2, "Shivam");
+        Student1 s1 = new Student1(1," Abhinav");
+        Student1 s2 = new Student1(2, "Shivam");
 
-        HashSet <Student> hs = new HashSet<Student>();
+        HashSet <Student1> hs = new HashSet<Student1>();
         hs.add(s1);
         hs.add(s2);
         
