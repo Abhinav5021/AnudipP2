@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator</title>
+    <style>
+  
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #f0f7f9; 
+            padding: 30px;
+            width: 600px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #0000ff; 
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        h4 {
+            text-align: center;
+            color: #555;
+            margin-top: 5px;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e6e6e6; 
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        .input-group {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #666;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Income Tax Calculator</h1>
+        <h4>Revised Income tax slabs under new tax regime for FY 2023-24 (AY 2024-25)</h4>
+        <p>The income tax slabs under the new income tax regime will be as follows:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Income tax slabs under new tax regime</th>
+                    <th>Income tax rates under new tax regime</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0 to Rs 3 lakh</td><td>0</td></tr>
+                <tr><td>Rs 3 lakh to Rs 6 lakh</td><td>5%</td></tr>
+                <tr><td>Rs 6 lakh to Rs 9 lakh</td><td>10%</td></tr>
+                <tr><td>Rs 9 lakh to Rs 12 lakh</td><td>15%</td></tr>
+                <tr><td>Rs 12 lakh to Rs 15 lakh</td><td>20%</td></tr>
+                <tr><td>Income above Rs 15 lakh</td><td>30%</td></tr>
+            </tbody>
+        </table>
+
+        <div class="input-group">
+            <label>Annual Income: New Slab</label>
+            <input type="number" id="incomeInput" placeholder="Enter your annual income">
+        </div>
+
+        <div class="btn-container">
+            <button onclick="calculateTax()">Calculate Tax</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateTax() {
+            var income = parseFloat(document.getElementById("incomeInput").value);
+            var tax = 0;
+
+            if (isNaN(income) || income < 0) {
+                alert("Please enter a valid income amount.");
+                return;
+            }
+
+            if (income <= 300000) {
+                tax = 0;
+            } else if (income <= 600000) {
+                tax = (income - 300000) * 0.05;
+            } else if (income <= 900000) {
+                tax = (300000 * 0.05) + ((income - 600000) * 0.10);
+            } else if (income <= 1200000) {
+                tax = (300000 * 0.05) + (300000 * 0.10) + ((income - 900000) * 0.15);
+            } else if (income <= 1500000) {
+                tax = (300000 * 0.05) + (300000 * 0.10) + (300000 * 0.15) + ((income - 1200000) * 0.20);
+            } else {
+                tax = (300000 * 0.05) + (300000 * 0.10) + (300000 * 0.15) + (300000 * 0.20) + ((income - 1500000) * 0.30);
+            }
+
+            alert("The income tax of an income of " + income + " is: " + tax);
+        }
+    </script>
+
+</body>
+</html>
